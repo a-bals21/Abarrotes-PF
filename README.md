@@ -13,10 +13,10 @@
 
 Este proyecto es el resultado del curso de **Diseño de Software** del **cuarto semestre de Ingeniería de Software**. En este repositorio, encontrarás el código y la documentación de un sistema de "pick up" para una tienda de abarrotes. La documentación incluye diagramas que ayudarán a comprender mejor el proyecto y sus funcionalidades. Asimismo, el código ha sido implementado con patrones de diseño y principios SOLID para garantizar su calidad y mantenibilidad. Para la elaboración de este producto se hará uso de Java como lenguaje de programación, JavaFX para las interfaces UX/UI y SQLite como gestor de base de datos.
 
-# índice Primera Entrega
+# Índice Primera Entrega
 
 * [Requerimientos Funcionales](Documentación/Requerimientos.md)
 * [Diagramas de casos de uso](Documentación/Diagramas_CasosDeUso.pdf)
 * [Diagrama de secuencia](Documentación/Diagrama_Secuencia.pdf)
 
-# índice Entrega Final
+# Índice Entrega Final
