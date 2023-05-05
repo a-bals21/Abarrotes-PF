@@ -1,6 +1,6 @@
 # Abarrotes PF
  
-![imagen_principal](Documentación/imagen_principal.png)
+![imagen_principal](Documentación/imagen_principal.PNG)
 
 # Equipo
 
