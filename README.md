@@ -15,7 +15,7 @@ Este proyecto es el resultado del curso de **Diseño de Software** del **cuarto 
 
 # índice Primera Entrega
 
-* [Requerimientos](Documentación/Requerimientos.md)
+* [Requerimientos Funcionales](Documentación/Requerimientos.md)
 * [Diagramas de casos de uso](Documentación/Diagramas_CasosDeUso.pdf)
 * [Diagrama de secuencia](Documentación/Diagrama_Secuencia.pdf)
 
