@@ -2,7 +2,7 @@
 
 ## Requerimientos Funcionales
 
-| RF0001 | Registro de usuario |
+| RF001 | Registro de usuario |
 |--------| ------ | 
 | Descripción | El sistema pedirá los datos correspondientes para registrar un nuevo usuario dentro del software y este se almacenará utilizando como persistencia de datos en el gestor SQLite donde se almacenará la información de los usuarios. |
 | Prioridad | Alta |
