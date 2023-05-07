@@ -1,7 +1,8 @@
-package objetos;
+package elementos;
 
 public class Usuario {
-
+    
+    private int id;
     private String correo;
     private String password;
 
@@ -9,7 +10,15 @@ public class Usuario {
         this.correo = c;
         this.password = p;
     }
-
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public int getId() {
+        return id;
+    }
+    
     public void setCorreo(String c) {
         this.correo = c;
     }

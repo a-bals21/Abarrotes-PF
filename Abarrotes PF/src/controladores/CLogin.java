@@ -6,21 +6,52 @@ package controladores;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
  *
  * @author Angel Balderas
  */
-public class CLogin implements Initializable {
+public class CLogin extends IControlador implements Initializable {
+
+    @FXML
+    private TextField txtfCorreoI;
+    @FXML
+    private PasswordField txtfPasswordI;
+    @FXML
+    private TextField txtfCorreoR;
+    @FXML
+    private PasswordField txtfPasswordR;
+    @FXML
+    private PasswordField txtfPasswordRR;
+    @FXML
+    private Tab tabIngresa;
+    @FXML
+    private Tab TabRegistra;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        
+    }
+
+    @Override
+    public void cerrarVentana() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void configurarController(IControlador controller) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

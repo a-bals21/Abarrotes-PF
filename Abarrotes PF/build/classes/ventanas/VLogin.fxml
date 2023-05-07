@@ -16,7 +16,8 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@Coolors.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.CLogin">
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@Coolors.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="controladores.CLogin">
    <children>
       <BorderPane minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: -fx-blanco;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <padding>
@@ -28,7 +29,7 @@
                   <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: -fx-verde;" styleClass="user-icon" />
                   <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
                      <tabs>
-                        <Tab fx:id="tabIngresa" style="-fx-background-color: -fx-azulclaro; -fx-pref-width: USE_COMPUTED_SIZE;" text="Ingresa">
+                        <Tab style="-fx-background-color: -fx-azulclaro; -fx-pref-width: USE_COMPUTED_SIZE;" text="Ingresa">
                            <content>
                               <AnchorPane minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: -fx-azulclaro;">
                                  <children>
@@ -43,7 +44,7 @@
                                                             <Font size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextField fx:id="txtfCorreoI" prefWidth="150.0" promptText="example@domain" styleClass="campotexto" />
+                                                      <TextField prefWidth="150.0" promptText="example@domain" styleClass="campotexto" />
                                                    </children>
                                                 </HBox>
                                                 <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" spacing="15.0">
@@ -53,7 +54,7 @@
                                                             <Font size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <PasswordField fx:id="txtfPasswordI" prefWidth="150.0" styleClass="campotexto" />
+                                                      <PasswordField prefWidth="150.0" styleClass="campotexto" />
                                                    </children>
                                                 </HBox>
                                                 <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="47.0" spacing="15.0">
@@ -82,7 +83,7 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab fx:id="TabRegistra" style="-fx-background-color: -fx-amarillo; -fx-pref-width: USE_COMPUTED_SIZE;" text="Regístrate">
+                        <Tab style="-fx-background-color: -fx-amarillo; -fx-pref-width: USE_COMPUTED_SIZE;" text="Regístrate">
                            <content>
                               <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: -fx-amarillo;">
                                  <children>
@@ -97,7 +98,7 @@
                                                             <Font size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextField fx:id="txtfCorreoR" promptText="example@domain" styleClass="campotexto" />
+                                                      <TextField promptText="example@domain" styleClass="campotexto" />
                                                    </children>
                                                 </HBox>
                                                 <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" spacing="15.0">
@@ -107,7 +108,7 @@
                                                             <Font size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <PasswordField fx:id="txtfPasswordR" prefWidth="150.0" styleClass="campotexto" />
+                                                      <PasswordField prefWidth="150.0" styleClass="campotexto" />
                                                    </children>
                                                 </HBox>
                                                 <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="47.0" spacing="15.0">
@@ -117,14 +118,14 @@
                                                             <Font size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <PasswordField fx:id="txtfPasswordRR" minWidth="-Infinity" prefWidth="150.0" styleClass="campotexto" />
+                                                      <PasswordField minWidth="-Infinity" prefWidth="150.0" styleClass="campotexto" />
                                                    </children>
                                                 </HBox>
                                              </children>
                                           </VBox>
                                           <HBox alignment="CENTER" spacing="15.0">
                                              <children>
-                                                <Button mnemonicParsing="false" styleClass="botones" text="Continuar" />
+                                                <Button mnemonicParsing="false" styleClass="botones" text="Registrarse" />
                                                 <Button mnemonicParsing="false" styleClass="botones" text="Salir" />
                                              </children>
                                           </HBox>

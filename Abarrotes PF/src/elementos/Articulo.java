@@ -1,4 +1,4 @@
-package objetos;
+package elementos;
 
 public class Articulo {
 
