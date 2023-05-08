@@ -19,5 +19,6 @@ Este proyecto es el resultado del curso de **Diseño de Software** del **cuarto 
 * [Diagrama de clases](Documentación/Abarrotes-PF.asta)
 * [Diagrama de casos de uso](Documentación/Diagramas_CasosDeUso.pdf)
 * [Diagrama de secuencia](Documentación/Diagrama_Secuencia.pdf)
+* [Manual de Usuario](Documentación/ManualDeUsuarios.pdf)
 
 # Índice Entrega Final
