@@ -17,8 +17,7 @@ import javafx.scene.layout.VBox;
  * @author Angel Balderas
  */
 public class CLogin extends IControlador implements Initializable {
-
-    // menos ingeniero
+    
     @FXML
     private TextField txtfCorreoI;
     @FXML
