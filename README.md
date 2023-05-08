@@ -1,6 +1,6 @@
 # Punto de Venta Abarrotes
  
-![imagen_principal](Documentación/imagen_principal.PNG)
+![imagen_principal](Documentación/imagen_principal.png)
 
 # Equipo
 
