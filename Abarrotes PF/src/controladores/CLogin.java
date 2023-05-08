@@ -17,7 +17,10 @@ import javafx.scene.layout.VBox;
  * @author Angel Balderas
  */
 public class CLogin extends IControlador implements Initializable {
-    
+    @FXML
+    private Button btnIngresarI;
+    @FXML
+    private Button btnSalirI;
     @FXML
     private TextField txtfCorreoI;
     @FXML
@@ -43,7 +46,8 @@ public class CLogin extends IControlador implements Initializable {
 
     @Override
     public void cerrarVentana() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        btnSalirI.setOnAction(actionEvent -> System.exit(0));
     }
 
     @Override
