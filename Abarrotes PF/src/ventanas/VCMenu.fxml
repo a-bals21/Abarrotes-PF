@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@Coolors.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.CMenu">
    <children>
       <Pane layoutX="-2.0" layoutY="52.0" prefHeight="350.0" prefWidth="302.0" style="-fx-background-color: -fx-amarillo-o;">
@@ -38,7 +37,7 @@
                </font>
             </Label>
             <Label layoutX="495.0" layoutY="19.0" text="Menú" />
-            <Button layoutX="537.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Volver" textFill="WHITE" />
+            <Button fx:id="btnVolverMenu" layoutX="537.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Volver" textFill="WHITE" />
          </children>
       </Pane>
    </children>

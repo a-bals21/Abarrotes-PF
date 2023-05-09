@@ -47,15 +47,15 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Button layoutX="703.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Volver" textFill="WHITE" />
+                  <Button fx:id="btnVolverArt" layoutX="703.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Volver" textFill="WHITE" />
                   <Label layoutX="645.0" layoutY="20.0" text="Artículos" />
                </children></Pane>
             <VBox layoutX="186.0" layoutY="103.0" prefHeight="134.0" prefWidth="145.0" spacing="8">
                <children>
-                  <TextField />
-                  <TextField />
-                  <TextField />
-                  <TextField />
+                  <TextField fx:id="txtfNombreArt" />
+                  <TextField fx:id="txtfPrecioPublico" />
+                  <TextField fx:id="txtfPrecioProveedor" />
+                  <TextField fx:id="txtfCantTotal" />
                </children>
             </VBox>
             <VBox alignment="TOP_RIGHT" layoutX="537.0" layoutY="39.0" prefHeight="26.0" prefWidth="67.0">
@@ -69,7 +69,7 @@
             </VBox>
             <VBox layoutX="615.0" layoutY="33.0" prefHeight="26.0" prefWidth="137.0">
                <children>
-                  <TextField />
+                  <TextField fx:id="txtfBuscarArt" />
                </children>
             </VBox>
             <TableView layoutX="349.0" layoutY="75.0" prefHeight="234.0" prefWidth="403.0">
@@ -79,22 +79,22 @@
                   <TableColumn prefWidth="71.2000732421875" text="Exist." />
               </columns>
             </TableView>
-            <Button layoutX="148.0" layoutY="345.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Registrar" textFill="WHITE" />
-            <Button layoutX="615.0" layoutY="320.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Actualizar" textFill="WHITE" />
-            <Button layoutX="693.0" layoutY="320.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Eliminar" textFill="WHITE" />
+            <Button fx:id="btnRegistrarArt" layoutX="148.0" layoutY="345.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Registrar" textFill="WHITE" />
+            <Button fx:id="btnActualizarArt" layoutX="615.0" layoutY="320.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Actualizar" textFill="WHITE" />
+            <Button fx:id="btnEliminarArt" layoutX="693.0" layoutY="320.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Eliminar" textFill="WHITE" />
             <BorderPane layoutX="151.0" layoutY="18.0" prefHeight="68.0" prefWidth="68.0" styleClass="archive-icon" />
             <Label layoutX="53.0" layoutY="301.0" text="Código Artículo">
                <font>
                   <Font name="Yu Gothic Medium" size="13.0" />
                </font>
             </Label>
-            <TextField layoutX="158.0" layoutY="296.0" />
+            <TextField fx:id="txtfCodigoArt" layoutX="158.0" layoutY="296.0" />
             <Label layoutX="113.0" layoutY="249.0" text="Categoría">
                <font>
                   <Font name="Yu Gothic Medium" size="13.0" />
                </font>
             </Label>
-            <ChoiceBox layoutX="185.0" layoutY="244.0" prefHeight="25.0" prefWidth="145.0" />
+            <ChoiceBox fx:id="CBoxCategoria" layoutX="185.0" layoutY="244.0" prefHeight="25.0" prefWidth="145.0" />
          </children>
       </Pane>
    </children>

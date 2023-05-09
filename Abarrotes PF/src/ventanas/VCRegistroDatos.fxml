@@ -41,16 +41,16 @@
                               </VBox>
                               <VBox layoutX="188.0" layoutY="25.0" prefHeight="103.0" prefWidth="166.0" spacing="10">
                                  <children>
-                                    <TextField />
-                                    <TextField />
-                                    <TextField />
+                                    <TextField fx:id="txtfNombreCliente" />
+                                    <TextField fx:id="txtfApellidoCliente" />
+                                    <TextField fx:id="txtfTelefonoCliente" />
                                  </children>
                               </VBox>
-                              <Button layoutX="95.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Continuar" textFill="WHITE">
+                              <Button fx:id="btnContinuarDatos" layoutX="95.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Continuar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font></Button>
-                              <Button layoutX="226.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Cancelar" textFill="WHITE">
+                              <Button fx:id="btnCancelarDatos" layoutX="226.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Cancelar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -84,17 +84,17 @@
                               </VBox>
                               <VBox layoutX="169.0" layoutY="26.0" prefHeight="114.0" prefWidth="163.0" spacing="10">
                                  <children>
-                                    <TextField />
-                                    <TextField />
-                                    <TextField />
+                                    <TextField fx:id="txtfCalleCliente" />
+                                    <TextField fx:id="txtfNumCliente" />
+                                    <TextField fx:id="txtfColoniaCliente" />
                                  </children>
                               </VBox>
-                              <Button layoutX="96.0" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Continuar" textFill="WHITE">
+                              <Button fx:id="btnContinuarCalle" layoutX="96.0" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Continuar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="206.0" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Cancelar" textFill="WHITE">
+                              <Button fx:id="btnCancelarCalle" layoutX="206.0" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Cancelar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -127,17 +127,17 @@
                               </VBox>
                               <VBox layoutX="178.0" layoutY="27.0" prefHeight="103.0" prefWidth="154.0" spacing="10">
                                  <children>
-                                    <TextField />
-                                    <TextField />
-                                    <TextField />
+                                    <TextField fx:id="txtfEstadoCliente" />
+                                    <TextField fx:id="txtfCiudadCliente" />
+                                    <TextField fx:id="txtfCPCliente" />
                                  </children>
                               </VBox>
-                              <Button layoutX="107.0" layoutY="161.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Registrar" textFill="WHITE">
+                              <Button fx:id="btnRegistrar" layoutX="107.0" layoutY="161.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Registrar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="217.0" layoutY="161.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Cancelar" textFill="WHITE">
+                              <Button fx:id="btnCancelarCiudad" layoutX="217.0" layoutY="161.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Cancelar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
