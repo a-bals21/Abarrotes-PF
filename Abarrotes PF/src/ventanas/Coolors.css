@@ -1,5 +1,6 @@
 /*
- * Empty Stylesheet file.
+ * Estilos de los iconos, botones y campos de texto. También aporta los colores globales
+ * Cualquier adicion de estilos a otros componentes, serán en CSSs a parte.
  */
 
 .mainFxmlClass {
@@ -14,7 +15,7 @@
     -fx-azulclaro-o: #61837b;
     -fx-azulmarino: #18314f;
     -fx-blanco: #fafafa;
-    -fx-gris: bebebe;
+    -fx-gris: #bebebe;
     -fx-negro: #242424;
 }
 
@@ -25,7 +26,7 @@
 
 .user-icon {
     -fx-background-color: #18314f;
-    -fx-shape: "M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z";
+    -fx-shape: "M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z";
 }
 
 .users-icon {
