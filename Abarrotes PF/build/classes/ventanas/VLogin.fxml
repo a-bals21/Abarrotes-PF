@@ -16,8 +16,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@Coolors.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="controladores.CLogin">
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@Coolors.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.CLogin">
    <children>
       <BorderPane minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: -fx-blanco;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <padding>
@@ -27,39 +26,39 @@
             <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" BorderPane.alignment="CENTER">
                <children>
                   <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: -fx-verde;" styleClass="user-icon" />
-                  <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                  <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" stylesheets="@TabStyle1.css" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
                      <tabs>
-                        <Tab style="-fx-background-color: -fx-azulclaro; -fx-pref-width: USE_COMPUTED_SIZE;" text="Ingresa">
+                        <Tab fx:id="tabIngresa" style="-fx-background-color: -fx-azulclaro;" text="Ingresa">
                            <content>
                               <AnchorPane minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: -fx-azulclaro;">
                                  <children>
                                     <VBox alignment="CENTER" layoutX="70.0" layoutY="30.0" minHeight="-Infinity" minWidth="-Infinity" spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <VBox spacing="10.0" VBox.vgrow="NEVER">
+                                          <VBox alignment="CENTER_RIGHT" maxWidth="-Infinity" spacing="10.0" VBox.vgrow="NEVER">
                                              <children>
-                                                <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                                                <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" spacing="15.0">
                                                    <children>
                                                       <Label text="Correo">
                                                          <font>
                                                             <Font size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextField prefWidth="150.0" promptText="example@domain" styleClass="campotexto" />
+                                                      <TextField fx:id="txtfCorreoI" prefWidth="150.0" promptText="example@domain" styleClass="campotexto" />
                                                    </children>
                                                 </HBox>
-                                                <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" spacing="15.0">
+                                                <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" spacing="15.0">
                                                    <children>
                                                       <Label text="Contraseña">
                                                          <font>
                                                             <Font size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <PasswordField prefWidth="150.0" styleClass="campotexto" />
+                                                      <PasswordField fx:id="txtfPasswordI" prefWidth="150.0" styleClass="campotexto" />
                                                    </children>
                                                 </HBox>
-                                                <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="47.0" spacing="15.0">
+                                                <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="47.0" maxWidth="-Infinity" spacing="15.0">
                                                    <children>
-                                                      <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Recordar correo" textAlignment="CENTER">
+                                                      <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="checkbox" text="Recordar correo" textAlignment="CENTER">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
@@ -71,7 +70,7 @@
                                           <HBox alignment="CENTER" spacing="15.0">
                                              <children>
                                                 <Button mnemonicParsing="false" styleClass="botones" text="Ingresar" />
-                                                <Button mnemonicParsing="false" styleClass="botones" text="Salir" />
+                                                <Button fx:id="btnSalirI" mnemonicParsing="false" onAction="#cerrarVentana" styleClass="botones" text="Salir" />
                                              </children>
                                           </HBox>
                                        </children>
@@ -83,7 +82,7 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab style="-fx-background-color: -fx-amarillo; -fx-pref-width: USE_COMPUTED_SIZE;" text="Regístrate">
+                        <Tab fx:id="tabRegistra" style="-fx-background-color: -fx-amarillo;" text="Regístrate">
                            <content>
                               <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: -fx-amarillo;">
                                  <children>
@@ -98,7 +97,7 @@
                                                             <Font size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextField promptText="example@domain" styleClass="campotexto" />
+                                                      <TextField fx:id="txtfCorreoR" promptText="example@domain" styleClass="campotexto" />
                                                    </children>
                                                 </HBox>
                                                 <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" spacing="15.0">
@@ -108,7 +107,7 @@
                                                             <Font size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <PasswordField prefWidth="150.0" styleClass="campotexto" />
+                                                      <PasswordField fx:id="txtfPasswordR" prefWidth="150.0" styleClass="campotexto" />
                                                    </children>
                                                 </HBox>
                                                 <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="47.0" spacing="15.0">
@@ -118,15 +117,15 @@
                                                             <Font size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <PasswordField minWidth="-Infinity" prefWidth="150.0" styleClass="campotexto" />
+                                                      <PasswordField fx:id="txtfPasswordRR" minWidth="-Infinity" prefWidth="150.0" styleClass="campotexto" />
                                                    </children>
                                                 </HBox>
                                              </children>
                                           </VBox>
                                           <HBox alignment="CENTER" spacing="15.0">
                                              <children>
-                                                <Button mnemonicParsing="false" styleClass="botones" text="Registrarse" />
-                                                <Button mnemonicParsing="false" styleClass="botones" text="Salir" />
+                                                <Button mnemonicParsing="false" styleClass="botones" text="Continuar" />
+                                                <Button mnemonicParsing="false" onAction="#cerrarVentana" styleClass="botones" text="Salir" />
                                              </children>
                                           </HBox>
                                        </children>
@@ -148,7 +147,7 @@
                   </TabPane>
                </children>
                <effect>
-                  <DropShadow height="20.0" offsetY="10.0" radius="5.75" spread="0.03" width="5.0">
+                  <DropShadow height="12.5" offsetY="5.0" radius="3.875" spread="0.03" width="5.0">
                      <color>
                         <Color red="0.09300000220537186" green="0.18960000574588776" blue="0.30000001192092896" opacity="0.2442748248577118" />
                      </color>

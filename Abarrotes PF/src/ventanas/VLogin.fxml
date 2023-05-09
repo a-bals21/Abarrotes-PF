@@ -69,8 +69,8 @@
                                           </VBox>
                                           <HBox alignment="CENTER" spacing="15.0">
                                              <children>
-                                                <Button fx:id="btnIngresarI" mnemonicParsing="false" styleClass="botones" text="Ingresar" />
-                                                <Button fx:id="btnSalirI" mnemonicParsing="false" styleClass="botones" text="Salir" />
+                                                <Button mnemonicParsing="false" styleClass="botones" text="Ingresar" />
+                                                <Button fx:id="btnSalirI" mnemonicParsing="false" onAction="#cerrarVentana" styleClass="botones" text="Salir" />
                                              </children>
                                           </HBox>
                                        </children>
@@ -82,7 +82,7 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab fx:id="TabRegistra" style="-fx-background-color: -fx-amarillo;" text="Regístrate">
+                        <Tab fx:id="tabRegistra" style="-fx-background-color: -fx-amarillo;" text="Regístrate">
                            <content>
                               <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: -fx-amarillo;">
                                  <children>
@@ -125,7 +125,7 @@
                                           <HBox alignment="CENTER" spacing="15.0">
                                              <children>
                                                 <Button mnemonicParsing="false" styleClass="botones" text="Continuar" />
-                                                <Button mnemonicParsing="false" styleClass="botones" text="Salir" />
+                                                <Button mnemonicParsing="false" onAction="#cerrarVentana" styleClass="botones" text="Salir" />
                                              </children>
                                           </HBox>
                                        </children>

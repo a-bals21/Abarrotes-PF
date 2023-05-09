@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -17,8 +17,6 @@ import javafx.scene.layout.VBox;
  * @author Angel Balderas
  */
 public class CLogin extends IControlador implements Initializable {
-    @FXML
-    private Button btnIngresarI;
     @FXML
     private Button btnSalirI;
     @FXML
@@ -34,7 +32,7 @@ public class CLogin extends IControlador implements Initializable {
     @FXML
     private Tab tabIngresa;
     @FXML
-    private Tab TabRegistra;
+    private Tab tabRegistra;
 
     /**
      * Initializes the controller class.
@@ -45,9 +43,18 @@ public class CLogin extends IControlador implements Initializable {
     }
 
     @Override
+    @FXML
     public void cerrarVentana() {
-        // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        btnSalirI.setOnAction(actionEvent -> System.exit(0));
+        Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
+        
+        alerta.setTitle("Salir");
+        alerta.setHeaderText("¿Desea salir?");
+        
+        alerta.showAndWait();
+        if(alerta.getResult().equals(ButtonType.OK)) {
+            Stage currentStage = (Stage) btnSalirI.getScene().getWindow();
+            currentStage.close();
+        }
     }
 
     @Override

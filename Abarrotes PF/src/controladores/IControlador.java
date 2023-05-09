@@ -69,7 +69,16 @@ public abstract class IControlador {
         this.usuario = u;
     }
     
+    /**
+     * Ejecuta metodos adicionales (si es que se agregan) que implementes en 
+     * el {@code controller} al cual se vaya a mover
+     * @param controller 
+     */
     public abstract void configurarController(IControlador controller);
     
+    /**
+     * Implementar el tipo de "cerrar ventana" que tendrá la ventana actual.
+     * Cerrar Programa o redireccion a otra ventana
+     */
     public abstract void cerrarVentana();
 }
