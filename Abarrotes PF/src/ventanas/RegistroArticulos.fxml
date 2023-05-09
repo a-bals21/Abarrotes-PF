@@ -82,7 +82,7 @@
             <Button layoutX="148.0" layoutY="345.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Registrar" textFill="WHITE" />
             <Button layoutX="615.0" layoutY="320.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Actualizar" textFill="WHITE" />
             <Button layoutX="693.0" layoutY="320.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Eliminar" textFill="WHITE" />
-            <BorderPane layoutX="146.0" layoutY="18.0" prefHeight="68.0" prefWidth="68.0" styleClass="archive-icon" />
+            <BorderPane layoutX="151.0" layoutY="18.0" prefHeight="68.0" prefWidth="68.0" styleClass="archive-icon" />
             <Label layoutX="53.0" layoutY="301.0" text="Código Artículo">
                <font>
                   <Font name="Yu Gothic Medium" size="13.0" />
