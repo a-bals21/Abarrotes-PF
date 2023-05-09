@@ -24,8 +24,8 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="75.0" prefWidth="602.0" style="-fx-background-color: -fx-amarillo;">
                                  <children>
-                                    <BorderPane layoutX="274.0" layoutY="31.0" prefHeight="53.0" prefWidth="54.0" style="-fx-background-color: -fx-azulmarino;" styleClass="users-icon" />
-                                    <VBox alignment="CENTER_RIGHT" layoutX="140.0" layoutY="99.0" prefHeight="200.0" prefWidth="100.0" spacing="10">
+                                    <BorderPane layoutX="274.0" layoutY="17.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-color: -fx-azulmarino;" styleClass="users-icon" />
+                                    <VBox alignment="CENTER_RIGHT" layoutX="113.0" layoutY="71.0" prefHeight="200.0" prefWidth="100.0" spacing="10">
                                        <children>
                                        <Label alignment="CENTER_RIGHT" text="Correo">
                                           <opaqueInsets>
@@ -77,12 +77,13 @@
                                        </Label>
                                        </children>
                                     </VBox>
-                                    <VBox layoutX="247.0" layoutY="121.0" prefHeight="202.0" prefWidth="205.0" spacing="11">
+                                    <VBox layoutX="219.0" layoutY="93.0" prefHeight="202.0" prefWidth="205.0" spacing="11">
                                        <children>
                                           <TextField prefHeight="0.0" prefWidth="142.0" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="6.0" />
-                                             </font></TextField>
+                                             </font>
+                                          </TextField>
                                           <PasswordField style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="6.0" />
@@ -105,17 +106,78 @@
                                              </font></TextField>
                                        </children>
                                     </VBox>
+                                    <Button layoutX="273.0" layoutY="278.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Actualizar" textFill="WHITE" />
                                  </children></AnchorPane>
                         </content>
                       </Tab>
                       <Tab style="-fx-background-color: -fx-amarillo;" text="Calle">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: -fx-amarillo;" />
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: -fx-amarillo;">
+                                 <children>
+                                    <BorderPane layoutX="260.0" layoutY="42.0" prefHeight="58.0" prefWidth="82.0" style="-fx-background-color: -fx-azulmarino;" styleClass="icono-adress-card" />
+                                    <VBox alignment="CENTER_RIGHT" layoutX="115.0" layoutY="64.0" prefHeight="200.0" prefWidth="100.0" spacing="10">
+                                       <children>
+                                          <Label text="Calle" />
+                                          <Label text="Numero" />
+                                          <Label text="Colonia" />
+                                       </children>
+                                    </VBox>
+                                    <Button layoutX="273.0" layoutY="278.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Actualizar" textFill="WHITE" />
+                                    <VBox layoutX="223.0" layoutY="127.0" prefHeight="80.0" prefWidth="198.0" spacing="10">
+                                       <children>
+                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                             <font>
+                                                <Font size="7.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                             <font>
+                                                <Font size="7.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                             <font>
+                                                <Font size="7.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
                         </content>
                       </Tab>
                         <Tab style="-fx-background-color: -fx-amarillo;" text="Ciudad">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: -fx-amarillo;" />
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: -fx-amarillo;">
+                                 <children>
+                                    <BorderPane layoutX="251.0" layoutY="30.0" prefHeight="71.0" prefWidth="99.0" style="-fx-background-color: -fx-azulmarino;" styleClass="edificio-icon" />
+                                    <VBox alignment="CENTER_RIGHT" layoutX="114.0" layoutY="64.0" prefHeight="200.0" prefWidth="100.0" spacing="10">
+                                       <children>
+                                          <Label text="Estado" />
+                                          <Label text="Ciudad" />
+                                          <Label text="Codigo Postal" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="221.0" layoutY="127.0" prefHeight="87.0" prefWidth="222.0" spacing="10">
+                                       <children>
+                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                             <font>
+                                                <Font size="7.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                             <font>
+                                                <Font size="7.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                             <font>
+                                                <Font size="7.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </VBox>
+                                    <Button layoutX="273.0" layoutY="278.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Actualizar" textFill="WHITE" />
+                                 </children></AnchorPane>
                           </content>
                         </Tab>
                     </tabs>
@@ -141,6 +203,5 @@
             </VBox>
          </top>
       </BorderPane>
-      <TextField />
    </children>
 </AnchorPane>
