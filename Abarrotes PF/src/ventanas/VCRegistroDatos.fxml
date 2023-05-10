@@ -132,7 +132,7 @@
                                     <TextField fx:id="txtfCPCliente" />
                                  </children>
                               </VBox>
-                              <Button fx:id="btnRegistrar" layoutX="107.0" layoutY="161.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Registrar" textFill="WHITE">
+                              <Button fx:id="btnRegistrarCliente" layoutX="107.0" layoutY="161.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Registrar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>

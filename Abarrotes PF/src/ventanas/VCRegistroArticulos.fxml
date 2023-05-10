@@ -72,7 +72,7 @@
                   <TextField fx:id="txtfBuscarArt" />
                </children>
             </VBox>
-            <TableView layoutX="349.0" layoutY="75.0" prefHeight="234.0" prefWidth="403.0">
+            <TableView fx:id="tabArticulos" layoutX="349.0" layoutY="75.0" prefHeight="234.0" prefWidth="403.0">
               <columns>
                 <TableColumn prefWidth="258.3999328613281" text="Nombre" />
                 <TableColumn prefWidth="73.5999755859375" text="Precio" />
@@ -94,7 +94,7 @@
                   <Font name="Yu Gothic Medium" size="13.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="CBoxCategoria" layoutX="185.0" layoutY="244.0" prefHeight="25.0" prefWidth="145.0" />
+            <ChoiceBox fx:id="cboxCategoria" layoutX="185.0" layoutY="244.0" prefHeight="25.0" prefWidth="145.0" />
          </children>
       </Pane>
    </children>
