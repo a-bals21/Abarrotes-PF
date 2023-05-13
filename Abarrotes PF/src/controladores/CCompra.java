@@ -4,6 +4,7 @@
  */
 package controladores;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -14,6 +15,10 @@ import javafx.fxml.Initializable;
  * @author Angel Balderas
  */
 public class CCompra implements Initializable {
+
+    private TextField txtBuscarC;
+
+    private TextField txtCantidadC;
 
     /**
      * Initializes the controller class.

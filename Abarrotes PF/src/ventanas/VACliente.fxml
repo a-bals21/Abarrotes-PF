@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="671.0" stylesheets="@Coolors.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.CActualizacionDatos">
+<fx:root id="AnchorPane" prefHeight="494.0" prefWidth="671.0" stylesheets="@Coolors.css" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.CACliente">
    <children>
       <BorderPane layoutX="37.0" layoutY="54.0" prefHeight="403.0" prefWidth="602.0">
          <center>
@@ -79,28 +79,28 @@
                                     </VBox>
                                     <VBox layoutX="219.0" layoutY="93.0" prefHeight="202.0" prefWidth="205.0" spacing="11">
                                        <children>
-                                          <TextField prefHeight="0.0" prefWidth="142.0" style="-fx-border-color: -fx-azulmarino;">
+                                          <TextField fx:id="txtCorreoD" prefHeight="0.0" prefWidth="142.0" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="6.0" />
                                              </font>
                                           </TextField>
-                                          <PasswordField style="-fx-border-color: -fx-azulmarino;">
+                                          <PasswordField fx:id="passContraseñaD" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="6.0" />
                                              </font></PasswordField>
-                                          <PasswordField style="-fx-border-color: -fx-azulmarino;">
+                                          <PasswordField fx:id="passRepContraseñaD" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="6.0" />
                                              </font></PasswordField>
-                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                          <TextField fx:id="txtNombreD" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="6.0" />
                                              </font></TextField>
-                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                          <TextField fx:id="txtApePaternoD" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="6.0" />
                                              </font></TextField>
-                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                          <TextField fx:id="txtTelefonoD" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="6.0" />
                                              </font></TextField>
@@ -125,17 +125,17 @@
                                     <Button layoutX="273.0" layoutY="278.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Actualizar" textFill="WHITE" />
                                     <VBox layoutX="223.0" layoutY="127.0" prefHeight="80.0" prefWidth="198.0" spacing="10">
                                        <children>
-                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                          <TextField fx:id="txtCalleC" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="7.0" />
                                              </font>
                                           </TextField>
-                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                          <TextField fx:id="txtNumeroC" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="7.0" />
                                              </font>
                                           </TextField>
-                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                          <TextField fx:id="txtColoniaC" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="7.0" />
                                              </font>
@@ -159,17 +159,17 @@
                                     </VBox>
                                     <VBox layoutX="221.0" layoutY="127.0" prefHeight="87.0" prefWidth="222.0" spacing="10">
                                        <children>
-                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                          <TextField fx:id="txtEstadoCD" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="7.0" />
                                              </font>
                                           </TextField>
-                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                          <TextField fx:id="txtCiudadCD" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="7.0" />
                                              </font>
                                           </TextField>
-                                          <TextField style="-fx-border-color: -fx-azulmarino;">
+                                          <TextField fx:id="txtCodPostalCD" style="-fx-border-color: -fx-azulmarino;">
                                              <font>
                                                 <Font size="7.0" />
                                              </font>
@@ -204,4 +204,4 @@
          </top>
       </BorderPane>
    </children>
-</AnchorPane>
+</fx:root>
