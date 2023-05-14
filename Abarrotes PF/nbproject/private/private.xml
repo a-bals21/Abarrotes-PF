@@ -3,7 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/alezx/OneDrive/Documentos/NetBeansProjects/Abarrotes%20PF/src/controladores/CLogin.java</file>
+            <file>file:/C:/Users/alezx/OneDrive/Documentos/NetBeansProjects/Abarrotes%20PF/src/registradores/ConexionDB.java</file>
+            <file>file:/C:/Users/alezx/OneDrive/Documentos/NetBeansProjects/Abarrotes%20PF/src/registradores/ClienteDB.java</file>
+            <file>file:/C:/Users/alezx/OneDrive/Documentos/NetBeansProjects/Abarrotes%20PF/src/elementos/Articulo.java</file>
+            <file>file:/C:/Users/alezx/OneDrive/Documentos/NetBeansProjects/Abarrotes%20PF/src/registradores/ArticuloDB.java</file>
+            <file>file:/C:/Users/alezx/OneDrive/Documentos/NetBeansProjects/Abarrotes%20PF/src/registradores/ClienteDAO.java</file>
         </group>
     </open-files>
 </project-private>
