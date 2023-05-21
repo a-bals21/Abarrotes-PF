@@ -19,6 +19,16 @@ public class Articulo {
         this.existencias = ex;
         this.categoria = cat;
     }
+    
+    public Articulo(int id, String cod, String n, float ppub, float pprob, int ex, String cat) {
+        this.id = id;
+        this.codigo = cod;
+        this.nombre = n;
+        this.pPublico = ppub;
+        this.pProveedor = pprob;
+        this.existencias = ex;
+        this.categoria = cat;
+    }
 
     public void setId(int id) {
         this.id = id;

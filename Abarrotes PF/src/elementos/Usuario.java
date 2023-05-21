@@ -11,6 +11,12 @@ public class Usuario {
         this.password = p;
     }
     
+    public Usuario(int id, String c, String p) {
+        this.id = id;
+        this.correo = c;
+        this.password = p;
+    }
+    
     public void setId(int id) {
         this.id = id;
     }

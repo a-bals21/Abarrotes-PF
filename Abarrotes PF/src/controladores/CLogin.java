@@ -44,7 +44,7 @@ public class CLogin extends IControlador implements Initializable {
 
     @Override
     @FXML
-    public void cerrarVentana() {
+    public void cerrarVentana() {        
         Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
         
         alerta.setTitle("Salir");

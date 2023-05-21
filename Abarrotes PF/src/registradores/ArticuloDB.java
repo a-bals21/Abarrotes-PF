@@ -7,7 +7,7 @@ package registradores;
 import elementos.Articulo;
 import java.util.ArrayList;
 import java.sql.Connection;
-import java.sql.Statement;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -35,8 +35,11 @@ public class ArticuloDB implements ArticuloDAO {
         Connection conn = ConexionDB.getConexion();
         
         try{
-            Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT * FROM ARTICULOS WHERE id_articulo = " + id);
+            PreparedStatement stm = conn.prepareStatement(
+                    "SELECT * FROM ARTICULOS WHERE id_articulo = ?"
+            );
+            stm.setString(1, id);
+            ResultSet rs = stm.executeQuery();
             
             anArticulo = new Articulo(
                     rs.getString(2),
@@ -58,23 +61,96 @@ public class ArticuloDB implements ArticuloDAO {
 
     @Override
     public int addArticulo(Articulo a) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int status = -1;
+        Connection conn = ConexionDB.getConexion();
+        
+        try {
+            PreparedStatement pstm = conn.prepareStatement(
+                    "INSERT INTO ARTICULOS(codigo_articulo, nombre_articulo, pPublico_articulo, pProveedor_articulo, existencias_articulo, categoria_articulo)"
+                            + "VALUES (?,?,?,?,?,?)"
+            );
+            
+            pstm.setString(1, a.getCodigo());
+            pstm.setString(2, a.getNombre());
+            pstm.setFloat(3, a.getPPublico());
+            pstm.setFloat(4, a.getPProveedor());
+            pstm.setInt(5, a.getExistencias());
+            pstm.setString(6, a.getCategoria());
+            
+            status = pstm.executeUpdate();
+        } catch (SQLException sqle) {
+            System.out.println(sqle.getMessage());
+        }
+        
+        return status;
     }
 
     @Override
     public int deleteArticulo(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int status = -1;
+        Connection conn = ConexionDB.getConexion();
+        
+        try {
+            PreparedStatement pstm = conn.prepareStatement(
+                    "DELETE FROM ARTICULOS WHERE id_cliente = ?"
+            );
+            pstm.setString(1, id);
+            status = pstm.executeUpdate();
+        } catch (SQLException sqle) {
+            System.out.println(sqle.getMessage());
+        }
+        
+        return status;
     }
 
     @Override
     public int updateArticulo(String id, Articulo a) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int status = -1;
+        Connection conn = ConexionDB.getConexion();
+        
+        try {
+            PreparedStatement pstm = conn.prepareStatement(
+                    "UPDATE ARTICULOS SET "
+                            + "codigo_articulo = ?, nombre_articulo = ?, pPublico_articulo = ?,"
+                            + "pProveedor_articulo = ?, existencias_articulo = ?, categoria_articulo = ?"
+                            + "WHERE id_cliente = ?"
+            );
+            
+            pstm.setString(1, a.getCodigo());
+            pstm.setString(2, a.getNombre());
+            pstm.setFloat(3, a.getPPublico());
+            pstm.setFloat(4, a.getPProveedor());
+            pstm.setInt(5, a.getExistencias());
+            pstm.setString(6, a.getCategoria());
+            
+            pstm.setString(7, id);
+            
+            status = pstm.executeUpdate();
+        } catch (SQLException sqle) {
+            System.out.println(sqle.getMessage());
+        }
+        
+        return status;
     }
     
-    public int updateStock(String id, int stock) {
+    public int updateStock(String id, int r) {
         int status = -1;
+        Connection conn = ConexionDB.getConexion();
         
-        
+        try {
+            PreparedStatement pstm = conn.prepareStatement(
+                    "UPDATE ARTICULOS SET existencias_articulo = ?"
+                            + "WHERE id_cliente = ?"
+            );
+            
+            pstm.setInt(1, r);
+            
+            pstm.setString(2, id);
+            
+            status = pstm.executeUpdate();
+        } catch (SQLException sqle) {
+            System.out.println(sqle.getMessage());
+        }        
         
         return status;
     }
