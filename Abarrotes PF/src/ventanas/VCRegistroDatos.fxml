@@ -14,9 +14,9 @@
    <children>
       <BorderPane layoutX="100.0" layoutY="127.0" prefHeight="254.0" prefWidth="411.0">
          <center>
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <TabPane prefHeight="200.0" prefWidth="200.0" stylesheets="@TabStyle1.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
               <tabs>
-                <Tab style="-fx-background-color: -fx-amarillo;" text="Datos">
+                <Tab fx:id="tabDatos" style="-fx-background-color: -fx-amarillo;" text="Datos">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: -fx-amarillo;">
                            <children>
@@ -46,11 +46,11 @@
                                     <TextField fx:id="txtfTelefonoCliente" />
                                  </children>
                               </VBox>
-                              <Button fx:id="btnContinuarDatos" layoutX="95.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Continuar" textFill="WHITE">
+                              <Button layoutX="95.0" layoutY="148.0" mnemonicParsing="false" onAction="#siguiente" styleClass="botones" text="Continuar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font></Button>
-                              <Button fx:id="btnCancelarDatos" layoutX="226.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Cancelar" textFill="WHITE">
+                              <Button fx:id="btnCancelar" layoutX="226.0" layoutY="148.0" mnemonicParsing="false" onAction="#cerrarVentana" styleClass="botones" text="Cancelar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -59,7 +59,7 @@
                         </AnchorPane>
                   </content>
                 </Tab>
-                <Tab style="-fx-background-color: -fx-amarillo;" text="Calle">
+                <Tab fx:id="tabCalle" style="-fx-background-color: -fx-amarillo;" text="Calle">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: -fx-amarillo;">
                            <children>
@@ -89,12 +89,12 @@
                                     <TextField fx:id="txtfColoniaCliente" />
                                  </children>
                               </VBox>
-                              <Button fx:id="btnContinuarCalle" layoutX="96.0" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Continuar" textFill="WHITE">
+                              <Button layoutX="96.0" layoutY="174.0" mnemonicParsing="false" onAction="#siguiente" styleClass="botones" text="Continuar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btnCancelarCalle" layoutX="206.0" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Cancelar" textFill="WHITE">
+                              <Button layoutX="206.0" layoutY="174.0" mnemonicParsing="false" onAction="#cerrarVentana" styleClass="botones" text="Cancelar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -102,7 +102,7 @@
                            </children></AnchorPane>
                   </content>
                 </Tab>
-                  <Tab style="-fx-background-color: -fx-amarillo;" text="Ciudad">
+                  <Tab fx:id="tabCiudad" style="-fx-background-color: -fx-amarillo;" text="Ciudad">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: -fx-amarillo;">
                            <children>
@@ -132,12 +132,12 @@
                                     <TextField fx:id="txtfCPCliente" />
                                  </children>
                               </VBox>
-                              <Button fx:id="btnRegistrarCliente" layoutX="107.0" layoutY="161.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Registrar" textFill="WHITE">
+                              <Button layoutX="107.0" layoutY="161.0" mnemonicParsing="false" onAction="#registrarCliente" styleClass="botones" text="Registrar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btnCancelarCiudad" layoutX="217.0" layoutY="161.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Cancelar" textFill="WHITE">
+                              <Button layoutX="217.0" layoutY="161.0" mnemonicParsing="false" onAction="#cerrarVentana" styleClass="botones" text="Cancelar" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -149,6 +149,6 @@
             </TabPane>
          </center>
       </BorderPane>
-      <BorderPane layoutX="245.0" layoutY="14.0" prefHeight="103.0" prefWidth="110.0" style="-fx-background-color: -fx-verde;" styleClass="user-icon" />
+      <BorderPane layoutX="263.0" layoutY="33.0" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: -fx-verde;" styleClass="user-icon" />
    </children>
 </AnchorPane>

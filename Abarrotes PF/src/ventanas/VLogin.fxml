@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Tab?>
@@ -53,23 +52,14 @@
                                                             <Font size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <PasswordField fx:id="txtfPasswordI" prefWidth="150.0" styleClass="campotexto" />
-                                                   </children>
-                                                </HBox>
-                                                <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="47.0" maxWidth="-Infinity" spacing="15.0">
-                                                   <children>
-                                                      <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="checkbox" text="Recordar correo" textAlignment="CENTER">
-                                                         <font>
-                                                            <Font size="10.0" />
-                                                         </font>
-                                                      </CheckBox>
+                                                      <PasswordField fx:id="txtfPasswordI" onAction="#ingresar" prefWidth="150.0" styleClass="campotexto" />
                                                    </children>
                                                 </HBox>
                                              </children>
                                           </VBox>
                                           <HBox alignment="CENTER" spacing="15.0">
                                              <children>
-                                                <Button mnemonicParsing="false" styleClass="botones" text="Ingresar" />
+                                                <Button mnemonicParsing="false" onAction="#ingresar" styleClass="botones" text="Ingresar" />
                                                 <Button fx:id="btnSalirI" mnemonicParsing="false" onAction="#cerrarVentana" styleClass="botones" text="Salir" />
                                              </children>
                                           </HBox>
@@ -117,14 +107,14 @@
                                                             <Font size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <PasswordField fx:id="txtfPasswordRR" minWidth="-Infinity" prefWidth="150.0" styleClass="campotexto" />
+                                                      <PasswordField fx:id="txtfPasswordRR" minWidth="-Infinity" onAction="#continuarRegistro" prefWidth="150.0" styleClass="campotexto" />
                                                    </children>
                                                 </HBox>
                                              </children>
                                           </VBox>
                                           <HBox alignment="CENTER" spacing="15.0">
                                              <children>
-                                                <Button mnemonicParsing="false" styleClass="botones" text="Continuar" />
+                                                <Button mnemonicParsing="false" onAction="#continuarRegistro" styleClass="botones" text="Continuar" />
                                                 <Button mnemonicParsing="false" onAction="#cerrarVentana" styleClass="botones" text="Salir" />
                                              </children>
                                           </HBox>

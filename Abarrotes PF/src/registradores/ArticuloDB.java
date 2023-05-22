@@ -31,7 +31,6 @@ public class ArticuloDB implements ArticuloDAO {
     @Override
     public Articulo getArticulo(String id) {
         Articulo anArticulo = null;
-        
         Connection conn = ConexionDB.getConexion();
         
         try{
@@ -42,6 +41,7 @@ public class ArticuloDB implements ArticuloDAO {
             ResultSet rs = stm.executeQuery();
             
             anArticulo = new Articulo(
+                    rs.getInt(1),
                     rs.getString(2),
                     rs.getString(3),
                     rs.getFloat(4),
@@ -50,8 +50,7 @@ public class ArticuloDB implements ArticuloDAO {
                     rs.getString(7)
             );
             
-            anArticulo.setId(rs.getInt(1));
-            
+            conn.close();
         } catch (SQLException sqle) {
             System.out.println(sqle.getMessage());
         }
@@ -78,6 +77,8 @@ public class ArticuloDB implements ArticuloDAO {
             pstm.setString(6, a.getCategoria());
             
             status = pstm.executeUpdate();
+            
+            conn.close();
         } catch (SQLException sqle) {
             System.out.println(sqle.getMessage());
         }
@@ -92,10 +93,12 @@ public class ArticuloDB implements ArticuloDAO {
         
         try {
             PreparedStatement pstm = conn.prepareStatement(
-                    "DELETE FROM ARTICULOS WHERE id_cliente = ?"
+                    "DELETE FROM ARTICULOS WHERE id_articulo = ?"
             );
             pstm.setString(1, id);
             status = pstm.executeUpdate();
+            
+            conn.close();
         } catch (SQLException sqle) {
             System.out.println(sqle.getMessage());
         }
@@ -126,6 +129,8 @@ public class ArticuloDB implements ArticuloDAO {
             pstm.setString(7, id);
             
             status = pstm.executeUpdate();
+            
+            conn.close();
         } catch (SQLException sqle) {
             System.out.println(sqle.getMessage());
         }
@@ -148,6 +153,8 @@ public class ArticuloDB implements ArticuloDAO {
             pstm.setString(2, id);
             
             status = pstm.executeUpdate();
+            
+            conn.close();
         } catch (SQLException sqle) {
             System.out.println(sqle.getMessage());
         }        
@@ -156,15 +163,56 @@ public class ArticuloDB implements ArticuloDAO {
     }
     
     public int searchArticulo(Articulo a) {
-        int status = -1;
+        int id = -1;
         
+        Connection conn = ConexionDB.getConexion();
         
+        try{
+            PreparedStatement pstm = conn.prepareStatement(
+                    "SELECT * FROM ARTICULOS WHERE codigo_articulo like ?"
+            );
+            
+            pstm.setString(1, "%"+a.getCodigo()+"%");
+            ResultSet rs = pstm.executeQuery();
+            
+            id = rs.getInt(1);
+            
+            conn.close();
+        } catch (SQLException sqle) {
+            System.out.println(sqle.getMessage());
+        }
         
-        return status;
+        return id;
     }
     
     public ArrayList<Articulo> getArticulos(String where) {
-        ArrayList<Articulo> articulos = null;
+        ArrayList<Articulo> articulos = new ArrayList<Articulo>();
+        Connection conn = ConexionDB.getConexion();
+        
+        try{
+            PreparedStatement stm = conn.prepareStatement(
+                    "SELECT * FROM ARTICULOS WHERE " + where
+            );
+            ResultSet rs = stm.executeQuery();
+                        
+            while (rs.next()) {
+                articulos.add(
+                        new Articulo(
+                                rs.getInt(1),
+                                rs.getString(2),
+                                rs.getString(3),
+                                rs.getFloat(4),
+                                rs.getFloat(5),
+                                rs.getInt(6),
+                                rs.getString(7)
+                                )
+                );
+            }
+            
+            conn.close();
+        } catch (SQLException sqle) {
+            System.out.println(sqle.getMessage());
+        }
         
         return articulos;
     }

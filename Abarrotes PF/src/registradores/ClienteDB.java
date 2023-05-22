@@ -79,6 +79,8 @@ public class ClienteDB implements ClienteDAO {
             );
             
             aCliente.setDireccion(itsDir);
+            
+            conn.close();
         } catch (SQLException sqle) {
             System.out.println(sqle.getMessage());
         }
@@ -122,6 +124,8 @@ public class ClienteDB implements ClienteDAO {
             
             pstm.executeUpdate();
             
+            
+            conn.close();
         } catch (SQLException sqle) {
             System.out.println(sqle.getMessage());
         }
@@ -140,6 +144,8 @@ public class ClienteDB implements ClienteDAO {
             );
             pstm.setString(1, id);
             status = pstm.executeUpdate();
+            
+            conn.close();
         } catch (SQLException sqle) {
             System.out.println(sqle.getMessage());
         }
@@ -189,6 +195,8 @@ public class ClienteDB implements ClienteDAO {
             pstm.setString(8, id);
             
             pstm.executeUpdate();
+            
+            conn.close();
         } catch (SQLException sqle) {
             System.out.println(sqle.getMessage());
         }
