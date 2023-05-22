@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="630.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="controladores.CCompra">
+<fx:root id="AnchorPane" prefHeight="540.0" prefWidth="630.0" styleClass="mainFxmlClass" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.CCompra">
     <stylesheets>
         <URL value="@Coolors.css" />
     </stylesheets>
@@ -52,7 +52,7 @@
                                 </items>
                               </MenuButton>
                               <Label layoutX="466.0" layoutY="145.0" text="Buscar" />
-                              <TextField layoutX="505.0" layoutY="141.0" prefHeight="25.0" prefWidth="81.0" style="-fx-border-color: -fx-azulmarino;" />
+                              <TextField fx:id="txtBuscarC" layoutX="505.0" layoutY="141.0" prefHeight="25.0" prefWidth="81.0" style="-fx-border-color: -fx-azulmarino;" />
                               <TableView layoutX="41.0" layoutY="176.0" prefHeight="163.0" prefWidth="253.0" style="-fx-border-color: -fx-azulmarino;">
                                 <columns>
                                   <TableColumn prefWidth="56.799991607666016" text="Nombre" />
@@ -75,7 +75,7 @@
                                  </font>
                               </Label>
                               <Label layoutX="373.0" layoutY="369.0" text="Cantidad" />
-                              <TextField layoutX="433.0" layoutY="364.0" prefHeight="25.0" prefWidth="81.0" style="-fx-border-color: -fx-azulmarino;" />
+                              <TextField fx:id="txtCantidadC" layoutX="433.0" layoutY="364.0" prefHeight="25.0" prefWidth="81.0" style="-fx-border-color: -fx-azulmarino;" />
                               <Button layoutX="518.0" layoutY="364.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: -fx-azulmarino;" stylesheets="@Coolors.css" text="Añadir" textFill="WHITE" />
                            </children>
                         </Pane>
@@ -86,4 +86,4 @@
          </center>
       </BorderPane>
    </children>
-</AnchorPane>
+</fx:root>
