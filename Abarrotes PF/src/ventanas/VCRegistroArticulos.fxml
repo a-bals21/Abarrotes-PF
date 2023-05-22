@@ -47,15 +47,15 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnVolverArt" layoutX="703.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Volver" textFill="WHITE" />
+                  <Button fx:id="btnVolverArt" layoutX="703.0" layoutY="16.0" mnemonicParsing="false" onAction="#cerrarVentana" styleClass="botones" text="Volver" textFill="WHITE" />
                   <Label layoutX="645.0" layoutY="20.0" text="Artículos" />
                </children></Pane>
             <VBox layoutX="186.0" layoutY="103.0" prefHeight="134.0" prefWidth="145.0" spacing="8">
                <children>
-                  <TextField fx:id="txtfNombreArt" />
-                  <TextField fx:id="txtfPrecioPublico" />
-                  <TextField fx:id="txtfPrecioProveedor" />
-                  <TextField fx:id="txtfCantTotal" />
+                  <TextField fx:id="txtNombre" styleClass="campotexto" />
+                  <TextField fx:id="txtPPublico" styleClass="campotexto" />
+                  <TextField fx:id="txtPProveedor" styleClass="campotexto" />
+                  <TextField fx:id="txtExistencias" styleClass="campotexto" />
                </children>
             </VBox>
             <VBox alignment="TOP_RIGHT" layoutX="537.0" layoutY="39.0" prefHeight="26.0" prefWidth="67.0">
@@ -69,26 +69,27 @@
             </VBox>
             <VBox layoutX="615.0" layoutY="33.0" prefHeight="26.0" prefWidth="137.0">
                <children>
-                  <TextField fx:id="txtfBuscarArt" />
+                  <TextField fx:id="txtBuscar" onKeyTyped="#buscarArticulos" styleClass="campotexto" />
                </children>
             </VBox>
-            <TableView fx:id="tabArticulos" layoutX="349.0" layoutY="75.0" prefHeight="234.0" prefWidth="403.0">
+            <TableView fx:id="tabArticulos" layoutX="429.0" layoutY="75.0" prefHeight="234.0">
               <columns>
-                <TableColumn prefWidth="258.3999328613281" text="Nombre" />
-                <TableColumn prefWidth="73.5999755859375" text="Precio" />
-                  <TableColumn prefWidth="71.2000732421875" text="Exist." />
+                <TableColumn fx:id="colCodigo" editable="false" minWidth="-1.0" resizable="false" sortable="false" text="Codigo" />
+                  <TableColumn fx:id="colNombre" editable="false" minWidth="-1.0" resizable="false" sortable="false" text="Nombre" />
+                <TableColumn fx:id="colPrecio" editable="false" minWidth="-1.0" sortable="false" text="Precio" />
+                  <TableColumn fx:id="colExistencias" editable="false" minWidth="-1.0" sortable="false" text="Exist." />
               </columns>
             </TableView>
-            <Button fx:id="btnRegistrarArt" layoutX="148.0" layoutY="345.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Registrar" textFill="WHITE" />
-            <Button fx:id="btnActualizarArt" layoutX="615.0" layoutY="320.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Actualizar" textFill="WHITE" />
-            <Button fx:id="btnEliminarArt" layoutX="693.0" layoutY="320.0" mnemonicParsing="false" style="-fx-background-color: -fx-azulmarino;" text="Eliminar" textFill="WHITE" />
+            <Button layoutX="148.0" layoutY="345.0" mnemonicParsing="false" onAction="#ingresaArticulo" styleClass="botones" text="Registrar" textFill="WHITE" />
+            <Button layoutX="561.0" layoutY="320.0" mnemonicParsing="false" onAction="#actualizar" styleClass="botones" text="Actualizar" textFill="WHITE" />
+            <Button layoutX="675.0" layoutY="320.0" mnemonicParsing="false" onAction="#eliminar" styleClass="botones" text="Eliminar" textFill="WHITE" />
             <BorderPane layoutX="151.0" layoutY="18.0" prefHeight="68.0" prefWidth="68.0" styleClass="archive-icon" />
             <Label layoutX="53.0" layoutY="301.0" text="Código Artículo">
                <font>
                   <Font name="Yu Gothic Medium" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="txtfCodigoArt" layoutX="158.0" layoutY="296.0" />
+            <TextField fx:id="txtCodigo" layoutX="158.0" layoutY="296.0" styleClass="campotexto" />
             <Label layoutX="113.0" layoutY="249.0" text="Categoría">
                <font>
                   <Font name="Yu Gothic Medium" size="13.0" />

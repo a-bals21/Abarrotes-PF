@@ -4,13 +4,19 @@ public class Cliente extends Usuario {
 
     private String nombre;
     private String apellidoP;
-    private String direccion;
+    private Direccion direccion;
 
-    public Cliente(String c, String p, String n, String ap, String dir) {
+    public Cliente(String c, String p, String n, String ap, Direccion dir) {
         super(c, p);
         this.nombre = n;
         this.apellidoP = ap;
         this.direccion = dir;
+    }
+    
+    public Cliente(int id, String c, String p, String n, String ap) {
+        super(id, c, p);
+        this.nombre = n;
+        this.apellidoP = ap;
     }
     
     public String getNombre() {
@@ -29,11 +35,11 @@ public class Cliente extends Usuario {
         this.apellidoP = ap;
     }
 
-    public String getDireccion() {
+    public Direccion getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(String dir) {
+    public void setDireccion(Direccion dir) {
         this.direccion = dir;
     }
     

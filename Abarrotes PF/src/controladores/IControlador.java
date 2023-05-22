@@ -20,7 +20,7 @@ import javafx.stage.StageStyle;
  */
 public abstract class IControlador {
 
-    private Usuario usuario = null;
+    protected Usuario usuario = null;
     
     /**
      * Cambia la escena actual por la escena que se encuentre en {@code path},
@@ -45,7 +45,7 @@ public abstract class IControlador {
             stage.initStyle(StageStyle.UNDECORATED);
             stage.show();
 
-            controlador.recibirUsuario(usuario);
+            controlador.recibirUsuario(this.usuario);
             configurarController(controlador);
         } catch (IOException ex) {
             Logger.getLogger(IControlador.class.getName()).log(Level.SEVERE, null, ex);

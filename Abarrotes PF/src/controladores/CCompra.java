@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author Angel Balderas
  */
-public class CCompra implements Initializable {
+public class CCompra extends IControlador implements Initializable {
 
     private TextField txtBuscarC;
 
@@ -27,5 +27,15 @@ public class CCompra implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @Override
+    public void configurarController(IControlador controller) {
+        
+    }
+
+    @Override
+    public void cerrarVentana() {
+        
+    }
     
 }

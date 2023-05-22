@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="671.0" stylesheets="@Coolors.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.CACliente">
+<AnchorPane id="AnchorPane" stylesheets="@Coolors.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.CActualizacionDatos">
    <children>
-      <BorderPane layoutX="37.0" layoutY="54.0" prefHeight="403.0" prefWidth="602.0">
+      <BorderPane layoutX="37.0" layoutY="54.0" prefHeight="403.0" prefWidth="602.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <VBox prefHeight="342.0" prefWidth="488.0" BorderPane.alignment="CENTER">
                <children>

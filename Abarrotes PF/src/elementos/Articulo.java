@@ -2,24 +2,48 @@ package elementos;
 
 public class Articulo {
 
-    private String id;
+    private int id;
+    private String codigo;
     private String nombre;
     private float pPublico;
     private float pProveedor;
+    private int existencias;
+    private String categoria;
+    private int cantidad = 1;
 
-    public Articulo(String id, String n, float ppub, int pprob) {
-        this.id = id;
+    public Articulo(String cod, String n, float ppub, float pprob, int ex, String cat) {
+        this.codigo = cod;
         this.nombre = n;
         this.pPublico = ppub;
         this.pProveedor = pprob;
+        this.existencias = ex;
+        this.categoria = cat;
+    }
+    
+    public Articulo(int id, String cod, String n, float ppub, float pprob, int ex, String cat) {
+        this.id = id;
+        this.codigo = cod;
+        this.nombre = n;
+        this.pPublico = ppub;
+        this.pProveedor = pprob;
+        this.existencias = ex;
+        this.categoria = cat;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
+    }
+    
+    public void setCodigo(String cod) {
+        this.codigo = cod;
+    }
+    
+    public String getCodigo() {
+        return codigo;
     }
 
     public void setNombre(String n) {
@@ -45,5 +69,28 @@ public class Articulo {
     public float getPProveedor() {
         return pProveedor;
     }
-
+    
+    public void setExistencias(int ex) {
+        this.existencias = ex;
+    }
+    
+    public int getExistencias() {
+        return existencias;
+    }
+    
+    public void setCategoría(String cat) {
+        this.categoria = cat;
+    }
+    
+    public String getCategoria() {
+        return categoria;
+    }
+    
+    public void setCantidad(int cant) {
+        this.cantidad = cant;
+    }
+    
+    public int getCantidad() {
+        return cantidad;
+    }
 }
