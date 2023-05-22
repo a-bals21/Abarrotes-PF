@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" stylesheets="@Coolors.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.CACliente">
+   <children>
+      <BorderPane layoutX="37.0" layoutY="54.0" prefHeight="403.0" prefWidth="602.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox prefHeight="342.0" prefWidth="488.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TabPane prefHeight="363.0" prefWidth="594.0" style="-fx-background-color: -fx-amarillo;" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab style="-fx-background-color: -fx-amarillo;" text="Datos">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="75.0" prefWidth="602.0" style="-fx-background-color: -fx-amarillo;">
+                                 <children>
+                                    <BorderPane layoutX="268.0" layoutY="31.0" prefHeight="50.0" prefWidth="66.0" style="-fx-background-color: -fx-azulmarino;" styleClass="users-icon" />
+                                    <VBox alignment="CENTER_RIGHT" layoutX="112.0" layoutY="81.0" prefHeight="192.0" prefWidth="100.0" spacing="13.0">
+                                       <children>
+                                       <Label alignment="CENTER_RIGHT" text="Correo">
+                                          <opaqueInsets>
+                                             <Insets />
+                                          </opaqueInsets>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                       </Label>
+                                       <Label alignment="CENTER_RIGHT" text="Contraseña">
+                                          <opaqueInsets>
+                                             <Insets />
+                                          </opaqueInsets>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                       </Label>
+                                       <Label alignment="CENTER_RIGHT" text="Repetir contraseña">
+                                          <opaqueInsets>
+                                             <Insets />
+                                          </opaqueInsets>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                       </Label>
+                                       <Label alignment="CENTER_RIGHT" text="Nombre">
+                                          <opaqueInsets>
+                                             <Insets />
+                                          </opaqueInsets>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                       </Label>
+                                       <Label alignment="CENTER_RIGHT" text="Apellido Paterno">
+                                          <opaqueInsets>
+                                             <Insets />
+                                          </opaqueInsets>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                       </Label>
+                                       <Label alignment="CENTER_RIGHT" text="Telefono">
+                                          <opaqueInsets>
+                                             <Insets />
+                                          </opaqueInsets>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                       </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="219.0" layoutY="93.0" prefHeight="202.0" prefWidth="205.0" spacing="11">
+                                       <children>
+                                          <TextField fx:id="txtCorreo" prefHeight="0.0" prefWidth="142.0" styleClass="campotexto">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </TextField>
+                                          <PasswordField fx:id="txtPass" styleClass="campotexto">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font></PasswordField>
+                                          <PasswordField fx:id="txtPassR" styleClass="campotexto">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font></PasswordField>
+                                          <TextField fx:id="txtNombre" styleClass="campotexto">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font></TextField>
+                                          <TextField fx:id="txtApellidoP" styleClass="campotexto">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font></TextField>
+                                          <TextField fx:id="txtTelefono" styleClass="campotexto">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font></TextField>
+                                       </children>
+                                    </VBox>
+                                    <Button fx:id="btnActualizar" layoutX="258.0" layoutY="282.0" mnemonicParsing="false" onAction="#actualizarCliente" styleClass="botones" text="Actualizar" textFill="WHITE" />
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab style="-fx-background-color: -fx-amarillo;" text="Calle">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: -fx-amarillo;">
+                                 <children>
+                                    <BorderPane layoutX="260.0" layoutY="45.0" prefHeight="58.0" prefWidth="82.0" style="-fx-background-color: -fx-azulmarino;" styleClass="icono-adress-card" />
+                                    <VBox alignment="CENTER_RIGHT" layoutX="117.0" layoutY="72.0" prefHeight="191.0" prefWidth="100.0" spacing="15.0">
+                                       <children>
+                                          <Label text="Calle" />
+                                          <Label text="Numero" />
+                                          <Label text="Colonia" />
+                                       </children>
+                                    </VBox>
+                                    <Button layoutX="258.0" layoutY="272.0" mnemonicParsing="false" onAction="#actualizarCliente" styleClass="botones" text="Actualizar" textFill="WHITE" />
+                                    <VBox layoutX="223.0" layoutY="127.0" prefHeight="80.0" prefWidth="198.0" spacing="10">
+                                       <children>
+                                          <TextField fx:id="txtCalle" styleClass="campotexto">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtNumero" styleClass="campotexto">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtColonia" styleClass="campotexto">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab style="-fx-background-color: -fx-amarillo;" text="Ciudad">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: -fx-amarillo;">
+                                 <children>
+                                    <BorderPane layoutX="277.0" layoutY="44.0" prefHeight="55.0" prefWidth="60.0" style="-fx-background-color: -fx-azulmarino;" styleClass="edificio-icon" />
+                                    <VBox alignment="CENTER_RIGHT" layoutX="110.0" layoutY="75.0" prefHeight="180.0" prefWidth="100.0" spacing="15.0">
+                                       <children>
+                                          <Label text="Estado" />
+                                          <Label text="Ciudad" />
+                                          <Label text="Codigo Postal" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="221.0" layoutY="127.0" prefHeight="87.0" prefWidth="222.0" spacing="10">
+                                       <children>
+                                          <TextField fx:id="txtEstado" styleClass="campotexto">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtCiudad" styleClass="campotexto">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtCodigoPostal" styleClass="campotexto">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </VBox>
+                                    <Button layoutX="264.0" layoutY="253.0" mnemonicParsing="false" onAction="#actualizarCliente" styleClass="botones" text="Actualizar" textFill="WHITE" />
+                                 </children></AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <VBox prefHeight="46.0" prefWidth="534.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="56.0" prefWidth="534.0" style="-fx-background-color: -fx-verde;">
+                     <children>
+                        <Button layoutX="524.0" layoutY="10.0" mnemonicParsing="false" onAction="#cerrarVentana" styleClass="botones" text="Volver" textFill="WHITE" />
+                        <Label layoutX="472.0" layoutY="15.0" text="Clientes" />
+                        <Label fx:id="lcorreo" layoutX="14.0" layoutY="10.0" prefHeight="14.0" prefWidth="204.0" text="example@domain">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
