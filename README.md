@@ -25,4 +25,5 @@ Este proyecto es el resultado del curso de **Diseño de Software** del **cuarto 
 * [Diagrama de colaboración](Documentación/Diagrama_Colaboracion.pdf)
 * [Diagrama de secuencia](Documentación/Diagrama_Secuencia.pdf)
 * [Manual de Usuario](Documentación/ManualDeUsuarios.pdf)
+* [Proyecto Docx](Documentación/ProyectoDS_Equipo4.pdf)
 
