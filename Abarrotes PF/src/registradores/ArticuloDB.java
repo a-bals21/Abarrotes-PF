@@ -116,7 +116,7 @@ public class ArticuloDB implements ArticuloDAO {
                     "UPDATE ARTICULOS SET "
                             + "codigo_articulo = ?, nombre_articulo = ?, pPublico_articulo = ?,"
                             + "pProveedor_articulo = ?, existencias_articulo = ?, categoria_articulo = ?"
-                            + "WHERE id_cliente = ?"
+                            + "WHERE id_articulo = ?"
             );
             
             pstm.setString(1, a.getCodigo());
@@ -145,7 +145,7 @@ public class ArticuloDB implements ArticuloDAO {
         try {
             PreparedStatement pstm = conn.prepareStatement(
                     "UPDATE ARTICULOS SET existencias_articulo = ?"
-                            + "WHERE id_cliente = ?"
+                            + "WHERE id_articulo = ?"
             );
             
             pstm.setInt(1, r);

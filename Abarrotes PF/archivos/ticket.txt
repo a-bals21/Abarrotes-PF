@@ -1,0 +1,15 @@
+ABARROTES TIZIMIN
+En la calle XX entre calles XX y XX
+
+CLIENTE: Isaac
+
+FECHA: Tue May 23 01:50:30 CDT 2023
+
+Producto Cant Precio Total
+Frijol  1 $22.0 $22.0
+Frijor  1 $23.0 $23.0
+Cheetos 3 $12.5 $37.5
+
+TOTAL: $82.5
+
+GRACIAS POR SU COMPRA

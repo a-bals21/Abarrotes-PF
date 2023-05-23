@@ -28,7 +28,8 @@ import registradores.ArticuloDB;
 public class CRArticulos extends IControlador implements Initializable {
 
     private boolean estaRegistrando = true;
-    private ArrayList<Articulo> articulos = new ArrayList<Articulo>();
+    private ArrayList<Articulo> articulos = new ArrayList<>();
+    private Articulo articuloActualizar = null;
     @FXML
     private ChoiceBox<String> cboxCategoria;
     @FXML
@@ -71,7 +72,7 @@ public class CRArticulos extends IControlador implements Initializable {
         );
 
         cboxCategoria.getSelectionModel().select("S/C");
-        
+
         this.colCodigo.setCellValueFactory(new PropertyValueFactory("codigo"));
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colPrecio.setCellValueFactory(new PropertyValueFactory("pPublico"));
@@ -101,54 +102,56 @@ public class CRArticulos extends IControlador implements Initializable {
 
     @FXML
     private void ingresaArticulo(ActionEvent event) {
+        String nombre = txtNombre.getText();
+        String codigo = txtCodigo.getText();
+        String ppub = txtPPublico.getText();
+        String ppro = txtPProveedor.getText();
+        String existencias = txtExistencias.getText();
+        String categoria = cboxCategoria.getValue();
+
+        if (nombre.isEmpty() || codigo.isEmpty() || ppub.isEmpty()
+                || ppro.isEmpty() || existencias.isEmpty() || categoria.isEmpty()) {
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+
+            alerta.setTitle("Datos incorrectos");
+            alerta.setHeaderText("Asegurese de llenar todos los campos de texto");
+
+            alerta.showAndWait();
+            return;
+        }
+
+        if (!ppub.matches("\\d+(.\\d+){0,1}") || !ppro.matches("\\d+(.\\d+){0,1}")) {
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+
+            alerta.setTitle("Datos incorrectos");
+            alerta.setHeaderText("El formato de precios es incorrecto");
+
+            alerta.showAndWait();
+            return;
+        }
+
+        if (!existencias.matches("\\d+")) {
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+
+            alerta.setTitle("Datos incorrectos");
+            alerta.setHeaderText("El dato de existencias es incorrecto (solo números)");
+
+            alerta.showAndWait();
+            return;
+        }
+
+        Articulo anArticulo = new Articulo(
+                codigo,
+                nombre,
+                Float.parseFloat(ppub),
+                Float.parseFloat(ppro),
+                Integer.parseInt(existencias),
+                categoria
+        );
+
+        ArticuloDB db = new ArticuloDB();
+        
         if (estaRegistrando) {
-            String nombre = txtNombre.getText();
-            String codigo = txtCodigo.getText();
-            String ppub = txtPPublico.getText();
-            String ppro = txtPProveedor.getText();
-            String existencias = txtExistencias.getText();
-            String categoria = cboxCategoria.getValue();
-
-            if (nombre.isEmpty() || codigo.isEmpty() || ppub.isEmpty()
-                    || ppro.isEmpty() || existencias.isEmpty() || categoria.isEmpty()) {
-                Alert alerta = new Alert(Alert.AlertType.WARNING);
-
-                alerta.setTitle("Datos incorrectos");
-                alerta.setHeaderText("Asegurese de llenar todos los campos de texto");
-
-                alerta.showAndWait();
-                return;
-            }
-
-            if (!ppub.matches("\\d+(.\\d+){0,1}") || !ppro.matches("\\d+(.\\d+){0,1}")) {
-                Alert alerta = new Alert(Alert.AlertType.WARNING);
-
-                alerta.setTitle("Datos incorrectos");
-                alerta.setHeaderText("El formato de precios es incorrecto");
-
-                alerta.showAndWait();
-                return;
-            }
-
-            if (!existencias.matches("\\d+")) {
-                Alert alerta = new Alert(Alert.AlertType.WARNING);
-
-                alerta.setTitle("Datos incorrectos");
-                alerta.setHeaderText("El dato de existencias es incorrecto (solo números)");
-
-                alerta.showAndWait();
-                return;
-            }
-
-            Articulo anArticulo = new Articulo(
-                    codigo,
-                    nombre,
-                    Float.parseFloat(ppub),
-                    Float.parseFloat(ppro),
-                    Integer.parseInt(existencias),
-                    categoria
-            );
-
             if (validarArticulo(anArticulo)) {
                 Alert alerta = new Alert(Alert.AlertType.WARNING);
 
@@ -158,21 +161,51 @@ public class CRArticulos extends IControlador implements Initializable {
                 alerta.showAndWait();
                 return;
             } else {
-                ArticuloDB db = new ArticuloDB();
 
                 db.addArticulo(anArticulo);
             }
-            
+
             limpiarCampos();
             return;
         }
 
-        estaRegistrando = true;
+        if (validarArticulo(anArticulo) && !articuloActualizar.getCodigo().equals(codigo)) {
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+
+            alerta.setTitle("Articulo existente");
+            alerta.setHeaderText("El articulo (código) ya se encuentra registrado.");
+
+            alerta.showAndWait();
+        } else {
+
+            db.updateArticulo(String.valueOf(articuloActualizar.getId()), anArticulo);
+
+            limpiarCampos();
+            estaRegistrando = true;
+        }
     }
 
     @FXML
     private void actualizar(ActionEvent event) {
+        Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
+
+        alerta.setTitle("Actualizar Articulo");
+        alerta.setHeaderText("¿Desea actualizar este articulo?");
+
+        alerta.showAndWait();
+        if (!alerta.getResult().equals(ButtonType.OK)) {
+            return;
+        }
+
+        articuloActualizar = tabArticulos.getSelectionModel().getSelectedItem();
         estaRegistrando = false;
+
+        txtNombre.setText(articuloActualizar.getNombre());
+        txtCodigo.setText(articuloActualizar.getCodigo());
+        txtPPublico.setText(String.valueOf(articuloActualizar.getPPublico()));
+        txtPProveedor.setText(String.valueOf(articuloActualizar.getPProveedor()));
+        txtExistencias.setText(String.valueOf(articuloActualizar.getExistencias()));
+        cboxCategoria.getSelectionModel().select(articuloActualizar.getCategoria());
     }
 
     @FXML
@@ -183,17 +216,19 @@ public class CRArticulos extends IControlador implements Initializable {
         alerta.setHeaderText("¿Desea eliminar este articulo?");
 
         alerta.showAndWait();
-        if (!alerta.getResult().equals(ButtonType.OK)) return;
-        
+        if (!alerta.getResult().equals(ButtonType.OK)) {
+            return;
+        }
+
         Articulo anArticulo = tabArticulos.getSelectionModel().getSelectedItem();
-        
+
         if (anArticulo != null) {
             ArticuloDB db = new ArticuloDB();
-            
+
             db.deleteArticulo(String.valueOf(anArticulo.getId()));
             articulos.remove(anArticulo);
         }
-        
+
         actualizarTabla();
     }
 
@@ -216,7 +251,7 @@ public class CRArticulos extends IControlador implements Initializable {
         txtExistencias.clear();
         cboxCategoria.getSelectionModel().select("S/C");
     }
-    
+
     public void actualizarTabla() {
         ObservableList<Articulo> olArticulos = FXCollections.observableArrayList();
 
@@ -230,9 +265,11 @@ public class CRArticulos extends IControlador implements Initializable {
     @FXML
     private void buscarArticulos(KeyEvent event) {
         ArticuloDB db = new ArticuloDB();
-        articulos = db.getArticulos("nombre_articulo like \"%"+txtBuscar.getText()+"%\" OR "
-                + "codigo_articulo like \"%"+txtBuscar.getText()+"%\"");
-        
+        String busqueda = txtBuscar.getText();
+
+        articulos = db.getArticulos("nombre_articulo like \"%" + busqueda + "%\" OR "
+                + "codigo_articulo like \"%" + busqueda + "%\"");
+
         actualizarTabla();
     }
 }

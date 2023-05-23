@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -14,72 +14,77 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="630.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="controladores.CCompra">
+<AnchorPane id="AnchorPane" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.CCompra">
     <stylesheets>
         <URL value="@Coolors.css" />
     </stylesheets>
    <children>
       <BorderPane layoutX="-2.0" layoutY="-1.0" prefHeight="540.0" prefWidth="630.0">
          <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="469.0" prefWidth="630.0" BorderPane.alignment="CENTER">
                <children>
-                  <BorderPane prefHeight="94.0" prefWidth="630.0">
+                  <BorderPane prefWidth="630.0">
                      <center>
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: -fx-verde;" BorderPane.alignment="CENTER">
+                        <Pane prefWidth="630.0" style="-fx-background-color: -fx-verde;" BorderPane.alignment="CENTER">
                            <children>
-                              <Button layoutX="523.0" layoutY="34.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="72.0" style="-fx-background-color: -fx-azulmarino;" stylesheets="@Coolors.css" text="Volver" textFill="WHITE" />
-                              <Label layoutX="25.0" layoutY="29.0" text="Comprar" textOverrun="CLIP">
+                              <Button fx:id="btnVolver" layoutX="544.0" layoutY="12.0" mnemonicParsing="false" onAction="#cerrarVentana" prefHeight="23.0" prefWidth="72.0" styleClass="botones" stylesheets="@Coolors.css" text="Volver" textFill="WHITE" />
+                              <Label layoutX="25.0" layoutY="8.0" text="Comprar" textOverrun="CLIP">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="464.0" layoutY="38.0" text="Compras" />
+                              <Label layoutX="484.0" layoutY="17.0" text="Compras" />
                            </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
                         </Pane>
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="449.0" prefWidth="630.0">
-                     <center>
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: -fx-azulclaro;" BorderPane.alignment="CENTER">
+                     <top>
+                        <Pane prefHeight="498.0" prefWidth="630.0" style="-fx-background-color: -fx-azulclaro;" BorderPane.alignment="CENTER">
                            <children>
-                              <BorderPane layoutX="278.0" layoutY="45.0" prefHeight="66.0" prefWidth="75.0" style="-fx-background-color: -fx-azulmarino;" styleClass="cash-register-icon" />
-                              <Label layoutX="116.0" layoutY="146.0" text="Artículos a comprar" />
-                              <Label layoutX="315.0" layoutY="145.0" text="Categoria" />
-                              <MenuButton layoutX="373.0" layoutY="141.0" mnemonicParsing="false" style="-fx-background-color: -fx-blanco; -fx-border-color: -fx-azulmarino;" text="Categoria">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                                  <MenuItem mnemonicParsing="false" text="Action 2" />
-                                </items>
-                              </MenuButton>
-                              <Label layoutX="466.0" layoutY="145.0" text="Buscar" />
-                              <TextField layoutX="505.0" layoutY="141.0" prefHeight="25.0" prefWidth="81.0" style="-fx-border-color: -fx-azulmarino;" />
-                              <TableView layoutX="41.0" layoutY="176.0" prefHeight="163.0" prefWidth="253.0" style="-fx-border-color: -fx-azulmarino;">
+                              <BorderPane layoutX="286.0" layoutY="41.0" prefHeight="56.0" prefWidth="58.0" style="-fx-background-color: -fx-azulmarino;" styleClass="cash-register-icon" />
+                              <Label layoutX="115.0" layoutY="132.0" text="Artículos a comprar" />
+                              <Label layoutX="340.0" layoutY="114.0" text="Categoria">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font></Label>
+                              <Label layoutX="475.0" layoutY="114.0" text="Buscar">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font></Label>
+                              <TextField fx:id="txtBuscar" layoutX="475.0" layoutY="128.0" onKeyTyped="#buscar" prefHeight="25.0" prefWidth="118.0" styleClass="campotexto" />
+                              <TableView fx:id="tabCarrito" layoutX="41.0" layoutY="156.0" prefHeight="183.0" prefWidth="253.0" style="-fx-border-color: -fx-azulmarino;">
                                 <columns>
-                                  <TableColumn prefWidth="56.799991607666016" text="Nombre" />
-                                  <TableColumn prefWidth="55.20001220703125" text="Precio" />
-                                    <TableColumn prefWidth="70.39996337890625" text="Cantidad" />
-                                    <TableColumn prefWidth="68.79991149902344" text="Total" />
+                                  <TableColumn fx:id="colNombreC" prefWidth="56.799991607666016" text="Nombre" />
+                                  <TableColumn fx:id="colPrecioC" prefWidth="55.20001220703125" text="Precio" />
+                                    <TableColumn fx:id="colCantidadC" prefWidth="70.39996337890625" text="Cantidad" />
+                                    <TableColumn fx:id="colTotalC" prefWidth="68.79991149902344" text="Total" />
                                 </columns>
                               </TableView>
-                              <TableView layoutX="340.0" layoutY="176.0" prefHeight="175.0" prefWidth="253.0" style="-fx-border-color: -fx-azulmarino;">
+                              <TableView fx:id="tabBuscar" layoutX="340.0" layoutY="157.0" prefHeight="194.0" prefWidth="253.0" style="-fx-border-color: -fx-azulmarino;">
                                  <columns>
-                                    <TableColumn prefWidth="87.2000732421875" text="Nombre" />
-                                    <TableColumn prefWidth="81.5999755859375" text="Precio" />
-                                    <TableColumn text="Exist." />
+                                    <TableColumn fx:id="colNombreB" prefWidth="87.2000732421875" text="Nombre" />
+                                    <TableColumn fx:id="colPrecioB" prefWidth="81.5999755859375" text="Precio" />
+                                    <TableColumn fx:id="colExistenciasB" text="Exist." />
                                  </columns>
                               </TableView>
-                              <Button layoutX="110.0" layoutY="351.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: -fx-azulmarino;" stylesheets="@Coolors.css" text="Eliminar Artículo" textFill="WHITE" />
-                              <Label layoutX="97.0" layoutY="385.0" text="Total:0000.00">
+                              <Button layoutX="103.0" layoutY="351.0" mnemonicParsing="false" onAction="#quitarArticulo" prefHeight="27.0" prefWidth="129.0" styleClass="botones" stylesheets="@Coolors.css" text="Eliminar Artículo" textFill="WHITE" />
+                              <Label fx:id="lTotal" layoutX="97.0" layoutY="391.0" text="Total:0000.00">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Label>
                               <Label layoutX="373.0" layoutY="369.0" text="Cantidad" />
-                              <TextField layoutX="433.0" layoutY="364.0" prefHeight="25.0" prefWidth="81.0" style="-fx-border-color: -fx-azulmarino;" />
-                              <Button layoutX="518.0" layoutY="364.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: -fx-azulmarino;" stylesheets="@Coolors.css" text="Añadir" textFill="WHITE" />
+                              <TextField fx:id="txtCantidad" layoutX="433.0" layoutY="364.0" prefHeight="25.0" prefWidth="81.0" styleClass="campotexto" />
+                              <Button layoutX="518.0" layoutY="364.0" mnemonicParsing="false" onAction="#agregarArticulo" prefHeight="26.0" prefWidth="68.0" styleClass="botones" stylesheets="@Coolors.css" text="Añadir" textFill="WHITE" />
+                              <ComboBox fx:id="cboxCategoria" layoutX="340.0" layoutY="128.0" prefHeight="25.0" prefWidth="123.0" />
+                              <Button layoutX="268.0" layoutY="437.0" mnemonicParsing="false" onAction="#realizarCompra" prefHeight="27.0" prefWidth="94.0" styleClass="botones" stylesheets="@Coolors.css" text="Comprar" textFill="WHITE" />
                            </children>
                         </Pane>
-                     </center>
+                     </top>
                   </BorderPane>
                </children>
             </VBox>
